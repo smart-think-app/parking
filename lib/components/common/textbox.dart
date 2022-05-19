@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/models.dart';
-
+import '../../constants/style-constant.dart';
 class TextBox extends StatefulWidget {
   final TextBoxStyle textbox;
   final Function onChangedFx;
@@ -28,10 +28,17 @@ class TextBoxState extends State<TextBox> {
       decoration: InputDecoration(
         labelText: widget.textbox.label,
         hintText: widget.textbox.hintText,
+        hintStyle: TextStyle(color: widget.textbox.foregroundColor),
+        labelStyle: TextStyle(color: widget.textbox.foregroundColor),
         suffixIcon: widget.textbox.icon,
-        border:  OutlineInputBorder(
-          borderSide: BorderSide(color: Color.fromARGB(255, 255, 86, 86), width: 2.0),
-          borderRadius:BorderRadius.circular(25.0)),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: widget.textbox.foregroundColor, width: 2.0),
+          borderRadius: BorderRadius.circular(BTN_BORDER_RADIUS)
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: widget.textbox.foregroundColor, width: 2.0),
+          borderRadius: BorderRadius.circular(BTN_BORDER_RADIUS)
+        ),
       ),
       obscureText: widget.textbox.obscureText,
       onChanged: (String value){

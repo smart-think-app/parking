@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import './components/login_page/login_page.dart';
-import './components/common/textbox.dart';
-import './models/models.dart';
-import './components/common/button/default_button.dart';
+import './constants/style-constant.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -35,10 +33,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Parking"),
-      ),
-      body: LoginPage()
+      backgroundColor: THEME_BACKGROUND_COLOR,
+      body: Container(
+        alignment: Alignment.center,
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: (LoginPage()),
+          ),
+        ),
+      )
       );
   }
 
