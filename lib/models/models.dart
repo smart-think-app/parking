@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 class ButtonInfo {
   String text = "";
-  Color backgroundColor = Colors.white;
-  Color foregroundColor = Colors.black;
-  Color overlayColor = Color.fromARGB(255, 245, 190, 186);
+  Color backgroundColor ;
+  Color foregroundColor ;
+  Color overlayColor ;
 
 
-  ButtonInfo(this.text , this.backgroundColor , this.foregroundColor , this.overlayColor);
+  ButtonInfo({this.text = "Button" , 
+  this.backgroundColor = Colors.white , 
+  this.foregroundColor = Colors.black, this.overlayColor = const Color.fromARGB(255, 245, 190, 186)});
 }
 
 class TextBoxStyle {
