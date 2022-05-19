@@ -23,3 +23,16 @@ class TextBoxStyle {
   this.foregroundColor=Colors.black , 
   this.obscureText = false,this.hintText="",this.isOnlyNumber = false,this.icon = const Icon(Icons.abc)});
 }
+
+class TextFormStyle {
+  String label ;
+  bool obscureText;
+  bool isOnlyNumber;
+  String hintText;
+  Color backgroundColor;
+  Color foregroundColor;
+  Color borderColor;
+  TextFormStyle({this.label="",this.obscureText = false,this.isOnlyNumber = false,
+  this.hintText="",this.backgroundColor=Colors.white,this.foregroundColor = Colors.black,
+  this.borderColor = Colors.blue});
+}
