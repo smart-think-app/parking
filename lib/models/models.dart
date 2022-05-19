@@ -14,6 +14,10 @@ class TextBoxStyle {
   bool obscureText;
   Color backgroundColor;
   Color foregroundColor;
+  String hintText;
+  bool isOnlyNumber;
+  Icon icon;
   TextBoxStyle({this.label="input" ,this.backgroundColor=Colors.white ,
-  this.foregroundColor=Colors.black , this.obscureText = false});
+  this.foregroundColor=Colors.black , 
+  this.obscureText = false,this.hintText="",this.isOnlyNumber = false,this.icon = const Icon(Icons.abc)});
 }

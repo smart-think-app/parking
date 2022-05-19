@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:parking/models/models.dart';
+import './components/login_page/login_page.dart';
+import './components/common/textbox.dart';
+import './models/models.dart';
 import './components/common/button/default_button.dart';
-import './components/common/button/textbox.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -37,17 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Parking"),
       ),
-      body: Column(
-        children: 
-        [TextBox(TextBoxStyle(
-          label: "Username",
-          foregroundColor: Colors.red,
-          obscureText: true),change),
-          DefaultTextButtonComponent(
-            ButtonInfo("Hello World", Colors.white , Colors.blue , Color.fromARGB(255, 243, 74, 62)),
-            text)
-        ],mainAxisAlignment: MainAxisAlignment.center,),
-    );
+      body: LoginPage()
+      );
   }
 
   void text(){
