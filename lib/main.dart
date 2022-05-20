@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './components/login_page/login_page.dart';
 import './constants/style-constant.dart';
 import './components/signup_page/signup_page.dart';
+import './components/map_page/map_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -41,7 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             // child: (LoginPage()),
-            child: (SignupPage()),
+            // child: (SignupPage()),
+            child: (MapPage()),
           ),
         ),
       )
