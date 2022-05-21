@@ -3,6 +3,7 @@ import './components/login_page/login_page.dart';
 import './constants/style-constant.dart';
 import './components/signup_page/signup_page.dart';
 import './components/map_page/map_page.dart';
+import './components/otp_page/otp_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -36,17 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: THEME_BACKGROUND_COLOR,
-      body: Container(
-        alignment: Alignment.center,
-        child: Container(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            // child: (LoginPage()),
+       // child: (LoginPage()),
             // child: (SignupPage()),
-            child: (MapPage()),
-          ),
-        ),
-      )
+            // child: (MapPage()),
+            // child: (OTPPage()),
+      body: OTPPage()
       );
   }
 
