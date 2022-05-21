@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking/components/otp_page/otp_page.dart';
 import 'package:parking/models/models.dart';
 import '../../components/common/textbox.dart';
 import '../../constants/style-constant.dart';
@@ -39,7 +40,9 @@ class LoginPageState extends State<LoginPage> {
           Column(children: [
             TextBox(phoneTextBoxStyle, onChangedPhoneText),
             TextBox(passwordTextBoxStyle, onChangedPassText),
-            DefaultTextButtonComponent(loginBtnStyle,login),Text(temp),
+            DefaultTextButtonComponent(loginBtnStyle,(){
+              login(context);
+            }),Text(temp),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround,children:  [
               Text("Quên mật khẩu",style: textStyle),
               Text("Đăng ký",style: textStyle,)
@@ -65,9 +68,13 @@ class LoginPageState extends State<LoginPage> {
     });
   }
 
-  void login() {
+  void login(BuildContext context) {
     setState(() {
       temp = "$phoneInput - $password";
     });
+
+    Navigator.of(context).push(MaterialPageRoute(builder: (_){
+      return OTPPage();
+    }));
   }
 }

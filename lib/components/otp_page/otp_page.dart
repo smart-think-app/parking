@@ -18,7 +18,6 @@ class OTPPageState extends State<OTPPage> {
       appBar: AppBar(
         backgroundColor: THEME_BACKGROUND_COLOR,
         title: const Text("Active Account"),
-        leading: const Icon(Icons.arrow_back),
       ),
       body: Container(
         child: Column(
