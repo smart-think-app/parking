@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 class ButtonInfo {
   String text = "";
@@ -36,3 +38,16 @@ class TextFormStyle {
   this.hintText="",this.backgroundColor=Colors.white,this.foregroundColor = Colors.black,
   this.borderColor = Colors.blue});
 }
+
+class Todos {
+  final int userId;
+  final int id;
+  final String title;
+  final String body;
+  Todos(this.userId , this.id , this.title , this.body);
+
+  factory Todos.fromMap(Map<String, dynamic> json) {
+    return Todos(json["userId"],json["id"],json["title"],json["body"]);
+  }
+}
+
