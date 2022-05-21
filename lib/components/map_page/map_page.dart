@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:parking/models/models.dart';
+import 'package:parking/providers/todos.dart';
+import 'package:provider/provider.dart';
 import '../../components/drawer/profile-not-login.dart';
 import 'package:http/http.dart' as http;
 class TodosComponents extends StatelessWidget {
@@ -29,10 +31,9 @@ class MapPage extends StatefulWidget {
 }
 
 class MapPageState extends State<MapPage> {
-  List<Todos> todos=[];
   @override
   void initState(){
-    getData();
+    // getData();
     super.initState();
   }
 
@@ -42,11 +43,10 @@ class MapPageState extends State<MapPage> {
   }
 
   @override
-
-
-  @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    final todosData = Provider.of<TodosProvider>(context);
+    final todos = todosData.items;
+    return Scaffold(
       body:  Center(
         child:GridView.count(
           primary: false,
@@ -62,23 +62,23 @@ class MapPageState extends State<MapPage> {
     );
   }
 
-  Future<void> getData() async {
-    var url = Uri.parse("https://jsonplaceholder.typicode.com/posts");
-    try {
-      final response = await http.get(url);
-      if (response.statusCode == 200) {
-        setState(() {
-          todos = parseTodos(response.body);
-        });
-      }
-    } catch (e) {
-      throw e;
-    }
-  }
+  // Future<void> getData() async {
+  //   var url = Uri.parse("https://jsonplaceholder.typicode.com/posts");
+  //   try {
+  //     final response = await http.get(url);
+  //     if (response.statusCode == 200) {
+  //       setState(() {
+  //         todos = parseTodos(response.body);
+  //       });
+  //     }
+  //   } catch (e) {
+  //     throw e;
+  //   }
+  // }
 
-  List<Todos> parseTodos(String responseBody) { 
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>(); 
-    return parsed.map<Todos>((json) =>Todos.fromMap(json)).toList(); 
-  }
+  // List<Todos> parseTodos(String responseBody) { 
+  //   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>(); 
+  //   return parsed.map<Todos>((json) =>Todos.fromMap(json)).toList(); 
+  // }
 
 }

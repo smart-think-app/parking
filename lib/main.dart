@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:parking/providers/todos.dart';
+import 'package:provider/provider.dart';
 import './components/login_page/login_page.dart';
 import './constants/style-constant.dart';
 import './components/signup_page/signup_page.dart';
@@ -14,13 +16,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+      create: (context)=> TodosProvider(),
+      child: MaterialApp(
       title: 'Parking',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(),
-    );
+    ),
+    ); 
   }
 }
 
