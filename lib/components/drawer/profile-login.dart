@@ -5,10 +5,11 @@ class MenuDto {
   String name;
   IconData icon;
   bool isSelected;
+  int data;
 
-  MenuDto(this.name , this.icon , {this.isSelected = false});
+  MenuDto(this.name , this.icon , this.data, {this.isSelected = false});
 }
-
+  
 class ProfileLogin extends StatefulWidget {
   @override
   ProfileLoginState createState() => ProfileLoginState();
@@ -18,13 +19,13 @@ class ProfileLoginState extends State<ProfileLogin> {
   String name = "Tran Quoc Huy";
   String phone = "0946515847";
   List<MenuDto> listMenu = [
-    MenuDto("Booking History" , Icons.history),
-    MenuDto("Favorite" , Icons.favorite , isSelected: true),
-    MenuDto("Account" , Icons.account_balance),
-    MenuDto("Feedback" , Icons.feedback),
-    MenuDto("FeeDebt Checking" , Icons.money),
-    MenuDto("Support" , Icons.support),
-    MenuDto("logout" , Icons.logout),
+    MenuDto("Booking History" , Icons.history,1),
+    MenuDto("Favorite" , Icons.favorite , 2),
+    MenuDto("Account" , Icons.account_balance,3),
+    MenuDto("Feedback" , Icons.feedback,4),
+    MenuDto("FeeDebt Checking" , Icons.money,5),
+    MenuDto("Support" , Icons.support,6),
+    MenuDto("logout" , Icons.logout,7),
   ];
   @override
   Widget build(BuildContext context) {
@@ -56,11 +57,22 @@ class ProfileLoginState extends State<ProfileLogin> {
               ],),)
           ),];
     List<Widget> menuWidget = listMenu.map(
-      (e) =>  ListTile(onTap: (){},leading: Icon(e.icon),
+      (e) =>  ListTile(onTap: (){
+        onTapMenu(e);
+      },leading: Icon(e.icon),
       title: Text(e.name),
-      selectedColor: Colors.green,
+      selectedColor: Colors.white,
+      selectedTileColor: THEME_BACKGROUND_COLOR,
       selected: e.isSelected,)).toList();
     baseWidgets.addAll(menuWidget);
     return baseWidgets;
+  }
+
+  void onTapMenu(MenuDto itemSelected) {
+    setState(() {
+      for (var item in listMenu) {
+      item.isSelected = itemSelected.data == item.data;
+    }
+    });
   }
 }
