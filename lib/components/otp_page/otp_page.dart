@@ -24,7 +24,7 @@ class OTPPageState extends State<OTPPage> {
         child: Column(
           children: [
             Text("PhoneNumber: $phone"),
-            TextField(readOnly: true,decoration: const InputDecoration(
+            TextField(textAlign: TextAlign.center,readOnly: true,decoration: const InputDecoration(
               hintText: "Verify Code"
             ),controller: verifyCodeController,),
             DefaultTextButtonComponent(btnActive, active),
@@ -38,9 +38,10 @@ class OTPPageState extends State<OTPPage> {
                         verifyCodeController.text = "123456";
                       });
                     },
-                    child: const Text("Send Verify Code" , style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    color: THEME_BACKGROUND_COLOR,
+                    child: const Text("Send Verify Code" , 
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: THEME_BACKGROUND_COLOR,
                   ),),),
                 ],
               ),

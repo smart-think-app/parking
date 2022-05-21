@@ -11,8 +11,8 @@ class MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       body: const Center(child: Text("Hello World")),
-      // drawer: ProfileNotLogin(),
-      drawer: ProfileLogin(),
+      drawer: ProfileNotLogin(),
+      // drawer: ProfileLogin(),
     );
   } 
 }

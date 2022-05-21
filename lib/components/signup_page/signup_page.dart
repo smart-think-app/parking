@@ -30,6 +30,7 @@ class SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("SignUp")),
       body: Center(
         child: Container(
           child: (
