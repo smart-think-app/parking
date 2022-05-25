@@ -66,24 +66,4 @@ class MapPageState extends State<MapPage> {
     );
   }
 
-  // Future<void> getData() async {
-  //   var url = Uri.parse("https://jsonplaceholder.typicode.com/posts");
-  //   try {
-  //     final response = await http.get(url);
-  //     if (response.statusCode == 200) {
-  //       setState(() {
-  //         todos = parseTodos(response.body);
-  //       });
-  //     }
-  //   } catch (e) {
-  //     throw e;
-  //   }
-  // }
-
-  // List<Todos> parseTodos(String responseBody) { 
-  //   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>(); 
-  //   return parsed.map<Todos>((json) =>Todos.fromMap(json)).toList(); 
-  // }
-
-
 }
