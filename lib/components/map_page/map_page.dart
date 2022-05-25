@@ -31,14 +31,18 @@ class MapPage extends StatefulWidget {
 }
 
 class MapPageState extends State<MapPage> {
+  bool _init = true;
   @override
   void initState(){
-    // getData();
     super.initState();
   }
 
   @override
   void didChangeDependencies(){
+    if (_init) {
+      Provider.of<TodosProvider>(context).getDataPost();
+    }
+    _init = false;
     super.didChangeDependencies();
   }
 
@@ -80,5 +84,6 @@ class MapPageState extends State<MapPage> {
   //   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>(); 
   //   return parsed.map<Todos>((json) =>Todos.fromMap(json)).toList(); 
   // }
+
 
 }
