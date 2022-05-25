@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:parking/models/models.dart';
@@ -15,7 +16,8 @@ class TodosProvider with ChangeNotifier {
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
-        _dataTodos = parsed.map<Todos>((json) =>Todos.fromMap(json)).toList(); 
+        _dataTodos = parsed.map<Todos>((json) =>Todos.fromMap(json)).toList();
+         sleep(Duration(seconds: 5));
         notifyListeners();
       }
     } catch (e) {

@@ -3,7 +3,7 @@ import 'package:parking/constants/style-constant.dart';
 import '../../components/common/text_form.dart';
 import '../../models/models.dart';
 import '../../components/common/button/default_button.dart';
-
+import '../common/buyer_avatar/buyer_avatar.dart';
 class SignupPage extends StatefulWidget {
   @override
   SignupPageState createState() => SignupPageState();
@@ -36,6 +36,8 @@ class SignupPageState extends State<SignupPage> {
           child: (
             Column(
               children: [
+                BuyerAvatar.Offline,
+                BuyerAvatar.Online,
                 TextForm(formStyleFirstName , onChangedFirstName),
                 TextForm(formStyleLastName , onChangedLastName),
                 TextForm(formStyleEmail , onChangedEmail),

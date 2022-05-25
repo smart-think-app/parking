@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking/components/future_builder/future_builder.dart';
 import 'package:parking/providers/todos.dart';
 import 'package:provider/provider.dart';
 import './components/login_page/login_page.dart';
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // child: (SignupPage()),
             // child: (MapPage()),
             // child: (OTPPage()),
-      body: MapPage()
+      body: MyFutureBuilderComponent()
       );
   }
 
